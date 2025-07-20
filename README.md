@@ -125,6 +125,3 @@ Develop a browser extension for detecting and filtering hate speech in real-time
 | User comfort and awareness     | ✅ Improved significantly          |
 
 ---
-
-## 📂 Repository Structure
-
