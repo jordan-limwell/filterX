@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- bootstrap -->
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- boxicons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>FilterX UI
+        </title>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header class="header" id="header">
+            <nav class="nav container">
+
+                <img src="assets/img/fx.png" alt="" class="nav__img">
+                <a href="#" class="nav__logo">FilterX</a>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+
+                        <li class="nav__item">
+                            <a href="#detect" class="nav__link">
+                                <i class='bx bx-radar nav__icon'></i>
+                                <span class="nav__name">Detect</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#modes" class="nav__link">
+                                <i class='bx bx-cog nav__icon'></i>
+                                <span class="nav__name">Settings</span>
+                            </a>
+                        </li>
+
+                        <li class="nav__item">
+                            <a href="#dashboard" class="nav__link">
+                                <i class='bx bxs-dashboard nav__icon'></i>
+                                <span class="nav__name">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <!-- <li class="nav__item">
+                            <a href="#logs" class="nav__link">
+                                <i class='bx bx-history nav__icon'></i>
+                                <span class="nav__name"></span>
+                            </a>
+                        </li> -->
+
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">
+                                <i class='bx bx-info-circle nav__icon'></i>
+                                <span class="nav__name">About</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                
+                <div class="position-relative p-0 nav__notif mt-2">
+                    <button class="notif__btn" id="notifBtn">
+                        <i class='bx bxs-bell fs-1' ></i>
+                    </button>
+                    <span class="position-absolute top-0 start-0 translate-middle notif__badge badge rounded-pill bg-danger">
+                        0
+                    </span>
+                </div>
+                
+                <div class="card" id="notifCard" style="max-height: 20rem; height: 20rem; width: 18rem; display: none; position: absolute; top: 3rem; right: 0.6rem;">
+                    <div class="card-header fw-bolder fs-5">
+                        Notification
+                    </div>
+                    <ul class="list-group list-group-flush pt-0" id="notificationList" style="max-height: 16rem; overflow-y: auto; border: none;">
+                        <li class="list-group-item text-muted" id="defaultMessage" style="color: #AEAAAA !important;">
+                            We will notify you here once hate speech is found in Real-Time Mode
+                        </li>
+                        <!-- <li class="list-group-item text-muted" id="defaultMessage">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><em>"Tanginamo bobo ka"</em> was flagged as hate speech. • 1m</span>
+                                <i class='bx bx-dots-horizontal-rounded fs-2 ms-2'></i>
+                            </div>
+                        </li>
+                        <li class="list-group-item text-muted" id="defaultMessage">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span><em>"Tanginamo bobo ka"</em> was flagged as hate speech. • 1m</span>
+                                <i class='bx bx-dots-horizontal-rounded fs-2 ms-2'></i>
+                            </div>
+                        </li> -->
+                    </ul>
+                    
+                </div>
+            </nav>
+        </header>
+
+         <!-- MAIN LANDING SECTION -->
+        <section class="hero-section text-center d-flex align-items-center justify-content-center landing__page">
+            <div class="container">
+                <h1 class="display-4 fw-bolder">Welcome to FilterX</h1>
+                <p class="lead landing__desc fw-bold">Real-Time Hate Speech Detection and Filtering.</p>
+                <div class="d-flex justify-content-center mt-4">
+                    <a href="#detect" class="btn btn-primary btn-lg mx-2 landing__button">Get Started</a>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <!-- DETECT -->
+            <section class="container section section__height" id="detect">
+                <h2 class="section__title mt-3">Activate Detection</h2>
+                    <div class="accordion mt-3 m-3" id="accordionExample">
+                        <div class="accordion-item accordion__sec first__acc__item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed first__accordion__title fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"><i class='bx bx-timer fs-1 me-2'></i>Real-Time Detection</button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>Enable Real Time Detection. </strong> New loaded sentences will be automatically scanned. 
+                                    Using this feature will consume higher resources.
+                                    <div class="form-check form-switch fs-1 justify-content-center align-items-center mx-auto mb-2">
+                                        <input class="form-check-input" type="checkbox" role="switch" id="scanToggle">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                        <div class="accordion-item accordion__sec second__acc__item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed second__accordion__title fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"><i class='bx bx-file-find fs-1 me-2'></i>Manual Scan</button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body mb-2">
+                                    <strong>Manually scan the page. </strong>Using this manual mode will only scan the currently loaded page elements, resulting in lower resource usage. Tap the button to scan.
+                                    <div class="d-grid gap-2 col-6 mx-auto mt-3">
+                                        <div class="justify-content-start align-items-start mx-auto">
+                                            <button class="manual__btn pt-1" style="width: 3rem;" type="button" id="scanPage" data-bs-toggle="modal" data-bs-target="#resultModal"><i class='bx bx-file-find fs-1'></i></i></i></button>
+                                        </div>
+                                        <div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered m-3">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h1 class="modal-title fs-5" id="resultModalLabel">Scan Result</h1>
+                                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body" id="modalContent">
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                  <!-- <button type="button" class="btn btn-primary">Confirm</button> -->
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item accordion__sec third__acc__item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed third__accordion__title fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                                    <i class='bx bx-message-rounded-dots fs-1 me-2'></i>Chat
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body p-0">
+                                    <div id="chatbox" class="m-0 mb-0 chatbox">
+                                        <div id="chat-messages" class="chat-messages" style="height: 30vh; width: 20.4rem; overflow-y: auto;">
+                                            <!-- Messages will appear here -->
+                                        </div>
+                                        <div class="chat-input d-flex align-items-center mx-auto m-2">
+                                            <input type="text" id="user-input" class="form-control type__box me-1 fs-6" placeholder="Type your sentence here..." />
+                                            <button id="send-message" class="btn btn-primary type__btn ms-2 mt-1">
+                                                <i class='bx bxs-send fs-1'></i>
+                                            </button>
+                                        </div>                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+            </section>
+
+            <!-- MODES -->
+            <section class="container section section__height" id="modes">
+                <h2 class="section__title mt-5">Settings</h2>
+                <div class="card card__main mx-auto shadow-none rounded-3" style="width: 18rem;">
+                    <div class="card-body card__body">
+                      <h4 class="card-title mb-2">Select Mode</h4>
+                      <div class="form-check form-switch ms-5 mb-2">
+                        <input class="form-check-input fs-6" type="checkbox" role="switch" name="mode" id="strictMode" value="strict">
+                        <label class="form-check-label fs-6" for="strictMode">Strict Mode</label>
+                      </div>
+
+                      <div class="form-check form-switch ms-5 mb-2">
+                        <input class="form-check-input fs-6" type="checkbox" role="switch" name="mode" id="moderateMode" value="moderate" checked>
+                        <label class="form-check-label fs-6" for="moderateMode">Moderate</label>
+                      </div>
+
+                      <div class="form-check form-switch ms-5 mb-2">
+                        <input class="form-check-input fs-6" type="checkbox" role="switch" name="mode" id="freeMode" value="free">
+                        <label class="form-check-label fs-6" for="freeMode">Free Mode</label>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="card card__main mx-auto shadow-none rounded-3 mt-5" style="width: 18rem;">
+                    <div class="card-body card__body">
+                        <h4 class="card-title mb-2">Filter Type</h4>
+                        <div class="form-check form-switch ms-5 mb-2">
+                            <input class="form-check-input fs-6" type="checkbox" role="switch" id="hideSwitch" name="filterType" value="hide" checked>
+                            <label class="form-check-label fs-6" for="hideSwitch">Hide Hate Speeches</label>
+                        </div>
+
+                        <div class="form-check form-switch ms-5 mb-2">
+                            <input class="form-check-input fs-6" type="checkbox" role="switch" id="uncensoredSwitch" name="filterType" value="uncensored">
+                            <label class="form-check-label fs-6" for="uncensoredSwitch">Uncensored</label>
+                        </div>
+
+                        <div class="form-check form-switch ms-5">
+                            <input class="form-check-input fs-6" type="checkbox" role="switch" id="highlightSwitch" name="filterType" value="highlight">
+                            <label class="form-check-label fs-6" for="highlightSwitch">Highlight</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FILTER -->
+            <section class="container section section__height" id="dashboard">
+                <h2 class="section__title mt-5">Dashboard</h2>
+                <div class="card draggable mx-3 dash__card1">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col mt-0">
+                                <h5 class="card-title">Hate Speech</h5>
+                            </div>
+                
+                            <div class="col-auto">
+                                <div class="stat text-primary">
+                                    <i class='bx bxs-pie-chart-alt-2 fs-1' style="color: white !important;"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <h1 class="mt-1 mb-3" id="totalOccurrences">0</h1>
+                        <div class="mb-0">
+                            <span id="hateSpeechPercentage" class="text-danger" style="color: #FFA116 !important;"> <i class="mdi mdi-arrow-bottom-right"></i> 0% </span>
+                            <span class="text-muted" style="color: white !important;">Of Overall Sentence Sent</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-body card__body mx-3 my-3" style="border-radius: 3% !important;">
+                    <canvas id="totalHateSpeechChart" width="20rem" height="15vh"></canvas>
+                </div>
+            </section>
+
+            <!-- ABOUT -->
+            <section class="container section section__height" id="about">
+                <h2 class="section__title mt-5">About</h2>
+            </section>
+
+            <!-- RM -->
+            <!-- <section class="container section section__height" id="about">
+                <h2 class="section__title mt-5">About</h2>
+            </section> -->
+        </main>
+        
+        <script type="module" src="assets/js/chart.umd.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="main.js"></script>
+
+    </body>
+</html>
