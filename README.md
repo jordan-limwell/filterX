@@ -4,6 +4,8 @@ This project presents **FilterX**, a multilingual browser extension built to det
 
 Developed as part of a thesis in fulfillment of the **Bachelor of Science in Computer Science** at STI College Balagtas, FilterX demonstrates how natural language processing (NLP) and browser technologies can be fused to address modern social issues.
 
+🏆 **Awarded Most Outstanding Thesis (School-Level) – STI Graduation 2025**
+
 ---
 
 ## 🌐 Overview
