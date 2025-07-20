@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "FilterX",
+  "version": "2.0",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "icons": {
+    "16": "assets/img/fx.png",
+    "48": "assets/img/fx.png",
+    "128": "assets/img/fx.png"
+  }
+}
